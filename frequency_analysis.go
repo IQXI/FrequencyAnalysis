@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 	"sort"
 	"strings"
 )
@@ -43,6 +44,8 @@ func Analysis(s_in string) []key_val {
 func main() {
 
 	someString := "привет всем сегодня мы будем говорить о том. как хорошо же жить на этом свете и о том, что лучше всего помогает нам выживать. Далее, вы все говорите привет и вам в ответ говорят привет."
+	var re = regexp.MustCompile(`[[:punct:]]`)
+	someString = re.ReplaceAllString(someString, "")
 
 	result := Analysis(someString)
 	for i, r := range result {
