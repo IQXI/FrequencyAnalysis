@@ -46,7 +46,7 @@ func main() {
 	someString := "Привет всем сегодня мы будем говорить о том. как хорошо же жить на этом свете и о том, что лучше всего помогает нам выживать. Далее, вы все говорите привет и вам в ответ говорят привет."
 	someString = strings.ToLower(someString)
 	var re = regexp.MustCompile(`[[:punct:]]`)
-	someString = re.ReplaceAllString(someString, "")
+	someString = re.ReplaceAllString(someString, " ")
 
 	result := Analysis(someString)
 	for i, r := range result {
